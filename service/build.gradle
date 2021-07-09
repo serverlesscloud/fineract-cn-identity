@@ -61,11 +61,6 @@ dependencies {
             [group: 'io.netty', name: 'netty-all', version: '4.1.39.Final'],
             [group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.39.Final']
     )
-
-    runtime(
-            [group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0']
-    )
-
 }
 
 tasks.withType(PublishToMavenLocal) { task ->
