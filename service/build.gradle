@@ -33,6 +33,7 @@ plugins {
     id 'maven-publish'
     id 'java'
     id 'idea'
+    id 'application'
 }
 
 apply from: '../shared.gradle'
@@ -60,6 +61,11 @@ dependencies {
             [group: 'io.netty', name: 'netty-all', version: '4.1.39.Final'],
             [group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.39.Final']
     )
+
+    runtime(
+            [group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0']
+    )
+
 }
 
 tasks.withType(PublishToMavenLocal) { task ->
@@ -82,4 +88,8 @@ publishing {
             version project.version
         }
     }
+}
+
+application {
+    mainClassName = 'org.apache.fineract.cn.identity.config.IdentityServiceConfig'
 }
